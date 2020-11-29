@@ -6,25 +6,33 @@ import { getColorString } from "../../Helpers";
 const buildCharactersList = (characters, setCardCharacter, deleteCharacter) => {
     return characters.map((character, index) => {
         return (
-            <li key={index}>
-                <span 
+            <div key={index} className="character-item">
+
+                <span
                     style={{color: getColorString(character.eye_color)}}
                     onClick={() => setCardCharacter(character.name)}
                 >
                     {character.name}
                 </span>
-                <span onClick={() => deleteCharacter(character.name)}>Delete</span>
-            </li>
+                <div className="character-item-actions">
+                    <button className="btn-error" onClick={() => deleteCharacter(character.name)}>
+                        Delete
+                    </button>
+                    <button className="btn-primary" onClick={() => setCardCharacter(character.name)}>
+                        View More
+                    </button>
+                </div>
+            </div>
         );
     })
 }
 
-const CharacterList = ({characters, setCardCharacter, deleteCharacter}) => {
+const CharacterList = ({characters, setCardCharacter, deleteCharacter, onEmptyState}) => {
     return characters && characters.length ? (
-        <ul>
+        <div className="character-wrapper">
             {buildCharactersList(characters, setCardCharacter, deleteCharacter)}
-        </ul>  
-    ) : <EmptyState />;
+        </div>
+    ) : <EmptyState action={onEmptyState} />;
 }
 
 export default CharacterList;

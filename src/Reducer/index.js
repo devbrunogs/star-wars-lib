@@ -6,7 +6,6 @@ import {
     API_SET_CHARACTER_CARD_NAME,
     API_REMOVE_CHARACTER_CARD_NAME
 } from "../Constants";
-
 import { removeByName } from "../Helpers";
 
 const initialState = {
@@ -25,7 +24,11 @@ export function reducer(state = initialState, action) {
         case API_REQUEST_FAILURE:
             return { ...state, fetching: false, characters: null, error: action.error };
         case API_DELETE_CHARACTER:
-            return { ...state, characters: removeByName(state.characters, action.name) };
+            return {
+                ...state,
+                characters: removeByName(state.characters, action.name),
+                cardCharacter: action.name === state.cardCharacter ? null : state.cardCharacter
+            };
         case API_SET_CHARACTER_CARD_NAME:
             return { ...state, cardCharacter: action.name };
         case API_REMOVE_CHARACTER_CARD_NAME:

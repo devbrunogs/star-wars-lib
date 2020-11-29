@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Header from "./Layout/Header";
 import Loading from "./Layout/Loading";
 import CharacterCard from "./Character/CharacterCard";
@@ -6,7 +6,7 @@ import CharacterList from "./Character/CharacterList";
 
 import { getCharacterByName } from "../Helpers";
 
-class Main extends Component {
+class Main extends React.Component {
     componentDidMount() {
         this.props.requestCharacters();
     }
@@ -22,41 +22,46 @@ class Main extends Component {
 
     getErrorMessage() {
         return (
-            <div>
+            <div className="alert alert-error">
                 <p>I have a bad Feeling about this</p>
             </div>
-        );           
+        );
     }
 
     getHeader() {
-        const { 
-            characters, 
-            setCardCharacter, 
-            deleteCharacter 
+        const {
+            characters,
+            cardCharacter,
+            setCardCharacter,
+            deleteCharacter,
+            removeCardCharacter
         } = this.props;
-        
+
         return (
-            <Header 
-                characters={characters} 
+            <Header
+                cardCharacter={cardCharacter}
+                characters={characters}
                 setCardCharacter={setCardCharacter}
                 deleteCharacter={deleteCharacter}
+                removeCardCharacter={removeCardCharacter}
             />
         );
     }
 
     getCharacterList() {
-        const { 
-            fetching, 
-            characters, 
-            setCardCharacter, 
-            deleteCharacter 
+        const {
+            requestCharacters,
+            characters,
+            setCardCharacter,
+            deleteCharacter
         } = this.props;
 
         return (
-            <CharacterList 
-                characters={characters} 
+            <CharacterList
+                characters={characters}
                 setCardCharacter={setCardCharacter}
                 deleteCharacter={deleteCharacter}
+                onEmptyState={requestCharacters}
             />
         );
     }
@@ -68,7 +73,7 @@ class Main extends Component {
             return null;
 
         return (
-            <CharacterCard 
+            <CharacterCard
                 characterInfo={currentCharacter}
                 deleteCharacter={this.props.deleteCharacter}
                 removeCardCharacter={this.props.removeCardCharacter}
@@ -77,22 +82,19 @@ class Main extends Component {
     }
 
     render() {
-        const { 
-            characters,
-            fetching, 
-            error,
+        const {
+            fetching,
+            error
         } = this.props;
 
-        if (fetching && !characters)
+        if (fetching)
             return <Loading />;
 
-        console.log(this.props);
-
         return (
-            <div className="App">
+            <div className="App container">
                 {this.getHeader()}
-                <div className={"container"} >
-                    {error && this.getErrorMessage()}    
+                <div>
+                    {error && this.getErrorMessage()}
                     {this.getCharacterCard()}
                     {this.getCharacterList()}
                 </div>
