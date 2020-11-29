@@ -7,7 +7,10 @@ import { Provider } from "react-redux";
 
 import { reducer } from "./Reducer";
 import { watcherSaga } from "./Actions";
+
 import Main from "./Containers/Main";
+
+import "./Style/styles.scss";
 
 const sagaMiddleware = createSagaMiddleware();
 

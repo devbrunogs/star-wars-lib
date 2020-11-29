@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap');
+
+$primaryColor: #4C53AA;
+$primaryBg: #769FCA;
+$errorBg: #FED9D9;
+$errorColor: #D9564C;
+$white: #ffffff;
+
+$fontNormal: 'Montserrat', sans-serif;
+$fontTitle: 'Bebas Neue', cursive;
+
+$paddingSmall: 4px;
+$paddingDefault: 8px;
+$paddingExtra: 16px;
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background:#efefef;
+    font-family: $fontNormal;
+}
+
+h1, h2, h3 {
+    font-family: $fontTitle;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.loading-container {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    justify-items: center;
+}
+
+.loading-container h2 {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/** alerts **/
+.alert {
+    padding: $paddingDefault;
+}
+
+.alert-error {
+    border-radius: 2px;
+    color: $errorColor;
+    background-color: $errorBg;
+    margin: $paddingDefault;
+}
+
+/** Base layout **/
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: $paddingDefault;
+}
+
+button {
+    background: none;
+    border: none;
+    border-radius: 2px;
+    padding: $paddingSmall $paddingDefault;
+    cursor: pointer;
+    margin-right: $paddingDefault;
+}
+
+.btn-error {
+    color: $errorColor;
+    border: 1px solid $errorColor;
+}
+
+
+.text-error {
+    color: $errorColor;
+}
+
+.btn-primary {
+    color: $primaryColor;
+    border: 1px solid $primaryColor;
+}
+
+.card {
+    background: $white;
+    box-sizing: border-box;
+    margin: $paddingDefault;
+    padding: $paddingDefault;
+    box-shadow: 0 20px 25px -35px #333;
+}
+
+dl {
+    margin: $paddingDefault;
+}
+
+.select-wrapper {
+    width: 250px;
+    position: relative;
+    text-align: left;
+}
+
+.select-wrapper .select-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    width: 100%;
+    background: $white;
+    border-bottom: 1px solid $primaryColor;
+    outline: none;
+    text-align: left;
+    padding: $paddingDefault;
+    box-sizing: border-box;
+    font-size: 0.8em;
+}
+
+.select-wrapper .select-button span {
+    cursor: pointer;
+    width: auto;
+    flex-basis: 70%;
+    flex-shrink: 0;
+}
+
+.select-wrapper .select-button .select-button-action {
+    align-self: flex-end;
+    flex-shrink: 0;
+    flex-basis: 15%;
+}
+
+.select-wrapper .select-button i {
+    float: right;
+}
+
+.select-wrapper .select-options {
+    background: $white;
+    padding: $paddingDefault;
+    box-sizing: border-box;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    box-shadow: 0 20px 25px -35px #333;
+}
+
+.select-wrapper .select-option {
+    margin: $paddingDefault 0;
+    cursor: pointer;
+}
+
+.select-option:first-child {
+    margin-top: 0;
+}
+
+.select-option:last-child {
+    margin-bottom: 0;
+}
+
+.character-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    padding: $paddingDefault 0 0 $paddingDefault;
+}
+
+.character-item {
+    background: $white;
+    border-radius: 2px;
+    box-shadow: 0 25px 25px -32px #333;
+    box-sizing: border-box;
+    padding: $paddingDefault;
+    margin-bottom: $paddingDefault;
+    margin-right: $paddingDefault;
+    text-align: left;
+    flex-basis: 19.15%;
+    font-size: 0.8em;
+    border: 1px solid transparent;
+}
+
+.character-item-actions {
+    margin-top: $paddingDefault;
+}
+
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        padding: $paddingDefault;
+        text-align: center;
+    }
+
+    .select-wrapper {
+        width: 100%;
+        position: relative;
+        text-align: left;
+    }
+
+    .character-item {
+        background: $white;
+        border-radius: 2px;
+        box-shadow: 0 25px 25px -32px #333;
+        box-sizing: border-box;
+        padding: $paddingDefault;
+        margin-bottom: $paddingDefault;
+        margin-right: $paddingDefault;
+        text-align: left;
+        flex-basis: 100%;
+        font-size: 0.8em;
+        border: 1px solid transparent;
+    }
+
+}
