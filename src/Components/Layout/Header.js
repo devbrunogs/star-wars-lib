@@ -1,14 +1,16 @@
 import React from "react";
+import CharacterSelect from "../Character/CharacterSelect";
 
-
-const Header = characters => {
+const Header = props => {
     return (
         <header>
             <div>
                 <h2>Star Wars Lib</h2>
             </div>
             <div>
-                <span>placeholder</span>
+                <CharacterSelect
+                    {...props}
+                />
             </div>
         </header>
     );

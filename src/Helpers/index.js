@@ -21,10 +21,11 @@ export const getColorString = color => {
         case "auburn":
             currentColor = "#71231D";
             break;
-        case "blond":    
+        case "blond":
+        case "yellow":
             currentColor = "#DAA520";
             break;
-        case "n/a":    
+        case "n/a":
         case "none":
             currentColor = "#999";
             break;
@@ -32,3 +33,42 @@ export const getColorString = color => {
 
     return currentColor;
 }
+
+export const mockCharacters = [
+    {
+        name: "Luke Skywalker",
+        height: "172",
+        mass: "77",
+        hair_color: "blond",
+        skin_color: "fair",
+        birth_year: "19BBY",
+        eye_color: "blue",
+        gender: "male",
+    },
+    {
+        name: "C-3PO",
+        birth_year: "112BBY",
+        eye_color: "yellow",
+        gender: "n/a",
+        hair_color: "n/a",
+        height: "167",
+        mass: "75",
+        name: "C-3PO",
+        skin_color: "gold"
+    }
+]
+
+export const mockOptions = [
+    {
+        value: "Option1",
+        text: "1"
+    },
+    {
+        value: "Option2",
+        text: "2"
+    },
+    {
+        value: "Option3",
+        text: "3"
+    }
+]
