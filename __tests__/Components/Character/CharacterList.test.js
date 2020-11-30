@@ -1,5 +1,6 @@
 import React from "react";
 import CharacterList from "../../../src/Components/Character/CharacterList";
+import CharacterListItem from "../../../src/Components/Character/CharacterListItem";
 import EmptyState from "../../../src/Components/Layout/EmptyState";
 import { mockCharacters } from "../../../src/Helpers";
 
@@ -34,18 +35,6 @@ describe("CharacterList Tests", () => {
     });
 
     it("should render character info", () => {
-        expect(wrapper.find("div").at(1).text()).toContain("Luke Skywalker");
-    });
-
-    it("should call delete function on click", () => {
-        wrapper.find("button").at(0).simulate("click");
-
-        expect(deleteSpy).toHaveBeenCalledTimes(1);
-    });
-
-    it("should call view function on click", () => {
-        wrapper.find("button").at(1).simulate("click");
-
-        expect(viewSpy).toHaveBeenCalledTimes(1);
+        expect(wrapper.find(CharacterListItem)).toHaveLength(2);
     });
 });
