@@ -1,6 +1,6 @@
 # Star Wars Lib Project
 ### Sobre
-Este é um projeto experimental que faz uso da API [swapi.dev](https://swapi.dev/) como servidor REST. Neste projeto foi utilizado React para os componentes frontend, Redux e Redux Saga para o gerenciamento de estado e Jest e Enzyme para a realização de testes unitários.
+Este é um projeto experimental que faz uso da API [swapi.dev](https://swapi.dev/) como servidor REST. Neste projeto foi utilizado uma configuração própria de [webpack](https://github.com/devbrunogs/belplate-react), React para os componentes frontend, Redux e Redux Saga para o gerenciamento de estado e Jest e Enzyme para a realização de testes unitários.
 
 Para a estilização, devido a simplicidade do projeto, foi utilizado CSS Flexbox, tornando mais fácil e rápida a customização sem a necessidade de gerar mais código que o necessário ou até mesmo tornando necessário a importação de libs externas.
 
