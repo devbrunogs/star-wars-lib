@@ -1,4 +1,4 @@
-# star-wars-lib
+# Star Wars Lib Project
 ### Sobre
 Este é um projeto experimental que faz uso da API [swapi.dev](https://swapi.dev/) como servidor REST. Neste projeto foi utilizado React para os componentes frontend, Redux e Redux Saga para o gerenciamento de estado e Jest e Enzyme para a realização de testes unitários.
 
