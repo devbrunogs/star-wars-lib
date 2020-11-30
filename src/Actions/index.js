@@ -19,6 +19,7 @@ export function* watcherSaga() {
     yield takeEvery(API_REMOVE_CHARACTER_CARD_NAME, removeCardCharacter)
 }
 
+// make the request to the API
 export const fetchCharacters = () => {
     return axios({
         method: "get",
@@ -26,6 +27,7 @@ export const fetchCharacters = () => {
     });
 }
 
+// set API response on the store
 export function* setCharactersData() {
     try {
         const response = yield call(fetchCharacters);
@@ -38,6 +40,7 @@ export function* setCharactersData() {
     }
 }
 
+// set character to be used on card
 export function* setCardCharacter(name) {
     try {
         put({ type: API_SET_CHARACTER_CARD_NAME, name });
@@ -46,6 +49,7 @@ export function* setCardCharacter(name) {
     }
 }
 
+// remove character used on card
 export function* removeCardCharacter() {
     try {
         put({ type: API_SET_CHARACTER_CARD_NAME });
@@ -54,12 +58,12 @@ export function* removeCardCharacter() {
     }
 }
 
+// remove character from the store
 export function* deleteCharacter(name) {
     try {
         put({ type: API_DELETE_CHARACTER, name });
 
     } catch (error) {
-        // dispatch a failure action to the store with the error
         put({ type: API_REQUEST_FAILURE, error });
     }
 }

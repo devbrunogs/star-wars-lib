@@ -32,7 +32,6 @@ const buildCharacterInfo = character => {
     );
 }
 
-// const CharacterList = ({character, deleteCharacter}) => {
 const CharacterList = ({characterInfo, deleteCharacter, removeCardCharacter}) => {
     return characterInfo ? (
         <div className="card">
