@@ -16,4 +16,6 @@ const Header = props => {
     );
 }
 
+Header.displayName = "Layout/Header";
+
 export default Header;

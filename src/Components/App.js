@@ -6,7 +6,7 @@ import CharacterList from "./Character/CharacterList";
 
 import { getCharacterByName } from "../Helpers";
 
-class Main extends React.Component {
+class App extends React.Component {
     componentDidMount() {
         this.props.requestCharacters();
     }
@@ -103,4 +103,4 @@ class Main extends React.Component {
     }
 }
 
-export default Main;
+export default App;

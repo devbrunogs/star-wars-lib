@@ -1,5 +1,6 @@
 import React from "react";
-import Select from "../Form/Select"
+import {func, array} from "prop-types";
+import Select from "../Form/Select";
 
 import { getColorString } from "../../Helpers";
 
@@ -37,6 +38,14 @@ const CharacterSelect = props => {
     }
 
     return getSelect();
+}
+
+CharacterSelect.displayName = "Character/CharacterSelect";
+
+CharacterSelect.propTypes = {
+    characters: array,
+    setCardCharacter: func,
+    deleteCharacter: func
 }
 
 export default CharacterSelect;

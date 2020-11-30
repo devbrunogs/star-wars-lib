@@ -1,4 +1,5 @@
 import React from "react";
+import {func, object} from "prop-types";
 
 import { getColorString } from "../../Helpers";
 
@@ -32,7 +33,7 @@ const buildCharacterInfo = character => {
     );
 }
 
-const CharacterList = ({characterInfo, deleteCharacter, removeCardCharacter}) => {
+const CharacterCard = ({characterInfo, deleteCharacter, removeCardCharacter}) => {
     return characterInfo ? (
         <div className="card">
             <button className="btn-error" onClick={() => deleteCharacter(characterInfo.name)}>
@@ -46,4 +47,12 @@ const CharacterList = ({characterInfo, deleteCharacter, removeCardCharacter}) =>
     ) : null;
 }
 
-export default CharacterList;
+CharacterCard.displayName = "Character/CharacterCard";
+
+CharacterCard.propTypes = {
+    characterInfo: object,
+    setCardCharacter: func,
+    deleteCharacter: func
+}
+
+export default CharacterCard;

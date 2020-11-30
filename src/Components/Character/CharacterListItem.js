@@ -24,7 +24,7 @@ const CharacterListItem = ({name, color, setCardCharacter, deleteCharacter}) => 
     );
 }
 
-CharacterListItem.displayName = "CharacterListItem";
+CharacterListItem.displayName = "Character/CharacterListItem";
 
 CharacterListItem.propTypes = {
     name: string,

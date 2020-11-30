@@ -1,5 +1,5 @@
 import React from "react";
-import propTypes from "prop-types";
+import {string, func} from "prop-types";
 
 class Select extends React.Component {
     constructor() {
@@ -85,9 +85,10 @@ class Select extends React.Component {
 Select.displayName = "Form/Select";
 
 Select.propTypes = {
-    onSelect: propTypes.func,
-    getOptions: propTypes.func,
-    extraAction: propTypes.func,
+    selectedOptionText: string,
+    onSelect: func,
+    getOptions: func,
+    extraAction: func,
 }
 
 export default Select;

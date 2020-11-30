@@ -8,4 +8,6 @@ const Loading = () => {
     )
 };
 
+Loading.displayName = "Layout/Loading";
+
 export default Loading;

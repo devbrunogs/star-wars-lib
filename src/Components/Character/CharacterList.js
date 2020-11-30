@@ -1,28 +1,18 @@
 import React from "react";
+import {array, func} from "prop-types";
 import EmptyState from "../Layout/EmptyState";
-
-import { getColorString } from "../../Helpers";
+import CharacterListItem from "./CharacterListItem";
 
 const buildCharactersList = (characters, setCardCharacter, deleteCharacter) => {
     return characters.map((character, index) => {
         return (
-            <div key={index} className="character-item">
-
-                <span
-                    style={{color: getColorString(character.eye_color)}}
-                    onClick={() => setCardCharacter(character.name)}
-                >
-                    {character.name}
-                </span>
-                <div className="character-item-actions">
-                    <button className="btn-error" onClick={() => deleteCharacter(character.name)}>
-                        Delete
-                    </button>
-                    <button className="btn-primary" onClick={() => setCardCharacter(character.name)}>
-                        View More
-                    </button>
-                </div>
-            </div>
+            <CharacterListItem
+                key={index}
+                name={character.name}
+                color={character.eye_color}
+                setCardCharacter={setCardCharacter}
+                deleteCharacter={deleteCharacter}
+            />
         );
     })
 }
@@ -33,6 +23,14 @@ const CharacterList = ({characters, setCardCharacter, deleteCharacter, onEmptySt
             {buildCharactersList(characters, setCardCharacter, deleteCharacter)}
         </div>
     ) : <EmptyState action={onEmptyState} />;
+}
+
+CharacterList.displayName = "Character/CharacterList";
+
+CharacterList.propTypes = {
+    characters: array,
+    setCardCharacter: func,
+    deleteCharacter: func
 }
 
 export default CharacterList;

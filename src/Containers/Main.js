@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import Main from "../Components/App";
+import App from "../Components/App";
 
 import {
     API_REQUEST,
@@ -39,4 +39,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

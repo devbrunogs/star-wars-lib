@@ -1,4 +1,5 @@
 import React from "react";
+import {func} from "prop-types";
 
 const EmptyState = ({action}) => {
     return (
@@ -10,5 +11,11 @@ const EmptyState = ({action}) => {
         </div>
     )
 };
+
+EmptyState.displayName = "Layout/EmptyState";
+
+EmptyState.propTypes = {
+    action: func
+}
 
 export default EmptyState;
