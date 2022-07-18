@@ -1,4 +1,7 @@
 # Star Wars Lib Project
+### Demo 
+https://star-wars-lib.vercel.app/
+
 ### Sobre
 Este é um projeto experimental que faz uso da API [swapi.dev](https://swapi.dev/) como servidor REST. Neste projeto foi utilizado uma configuração própria de [webpack](https://github.com/devbrunogs/belplate-react), React para os componentes frontend, Redux e Redux Saga para o gerenciamento de estado e Jest e Enzyme para a realização de testes unitários.
 
